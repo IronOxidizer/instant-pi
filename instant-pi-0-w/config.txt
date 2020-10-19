@@ -1,0 +1,8 @@
+gpu_mem=16
+start_file=start.elf
+fixup_file=fixup.dat
+
+kernel=zImage
+
+# fixes rpi (3B, 3B+, 3A+, 4B and Zero W) ttyAMA0 serial console
+dtoverlay=miniuart-bt
