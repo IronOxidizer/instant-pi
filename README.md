@@ -20,11 +20,8 @@ Values represent time from unpowered to userland in seconds (+/-0.3s)
 
 |  | RPi OS Full | Buildroot | Buildroot Custom | CD Bootloader Overhead |
 |-|-:|-:|-:|-:|
-| 0 |  |  |  |  |
-| 0w | 70 | 10.5 | 8.5 | 4.1 |
-| 1B | 77 | 13.0 | 9.2 | 4.3 |
-| 2Bv1.2 |  |  |  |  |
-| 3B+ |  |  |  |  |
+| [0w](instant-pi-0w) | 70 | 10.5 | 8.5 | 4.1 |
+| [1B](instant-pi-1b) | 77 | 13.0 | 9.2 | 4.3 |
 | 4B |  |  |  |  |
 
 CD Bootloader Overhead is the theoretical fastest boot time with the closed source cut down bootloader. On [Punchboot](https://github.com/jonasblixt/punchboot) capable SoCs (open source bootloader), this overhead can be as low as 60ms.
