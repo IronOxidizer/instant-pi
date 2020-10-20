@@ -1,5 +1,5 @@
 # instant-pi
-Achieving the fastest possible boot times on various Raspberry Pi devices
+Achieving the fastest possible boot times with various Raspberry Pi devices
 
 When describing boot speed, we typically mean the time it takes for a device to go from un-powered to userspace. For this project, boot time will be measured from the moment the device receives power, to interactive shell with HDMI+USB+keyboard enabled. In your project this could instead be something like taking a picture, playing a video, or sending a message via WiFi or SMS.
 
@@ -18,7 +18,7 @@ Based on the following projects:
 
 Values represent time from unpowered to userland in seconds (+/-0.3s)
 
-|  | RPi OS Full | Buildroot | Buildroot Custom | CD Bootloader Overhead |
+|  | RPi OS Full | Buildroot | Buildroot Instant Pi | CD Bootloader Overhead |
 |-|-:|-:|-:|-:|
 | [0w](instant-pi-0w) | 70 | 10.5 | 8.5 | 4.1 |
 | [1B](instant-pi-1b) | 77 | 13.0 | 9.2 | 4.3 |
