@@ -156,5 +156,6 @@ I used `make savedefconfig` to generate a defconfig which I saved to `buildroot/
 This generates a 145MB (25MB gzipped) `sdcard.img` which includes a 136MB `rootfs.f2fs` and 6MB `zImage`. Our optimizations result in boot times that are consistently ~29% faster at ~9.2s.
 
 **TODO:**
+- Make boot partition smaller: https://github.com/raspberrypi/firmware/issues/1486#issuecomment-745093948
 - Our next step is to minimize the kernel, rootfs, and drivers / modules.
 - Last step is to disable logging and kernel output messages, we haven't done this till now to make it easier to debug.
