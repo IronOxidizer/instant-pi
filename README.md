@@ -82,7 +82,7 @@ To boot, we'll need the following files in the root of our [V]FAT formatted boot
     - [Multiple variants](https://www.raspberrypi.org/documentation/configuration/boot_folder.md) corresponding to start.elf, we'll use Cut Down variant `fixup_cd.elf` to improve boot times
     - Currently only available as a binary blob
     - Fetch it from here: https://github.com/raspberrypi/firmware/raw/stable/boot/fixup.
-    
+
 - `kernel.img` or `zImage`
     - Linux kernel
     - Runs `/init` with PID1
@@ -137,7 +137,7 @@ First I made the created my own defconfig with the following changes:
 - Compress the kernel using LZ4
 - Remove default RPi firmware
 
-Then I created my own `genimage.cfg` to look for a F2FS `rootfs` instead of EXT4. I also shrunk the boot partition size to 8208KB as a result of the smaller cut down firmware.
+Then I created my own `genimage.cfg` to look for a F2FS `rootfs` instead of EXT4. I also shrunk the boot partition size to 7M (switch to FAT32 boot with 512 cluster size) as a result of the smaller cut down firmware.
 
 Finally, I removed unnecessary parameters in `cmdline.txt` and added `rootflags=fastboot` for F2FS. I created a blank `config.txt` and added the following lines to use the cut down firmware and specify our compressed kernel.
 
@@ -158,6 +158,5 @@ This generates a 145MB (25MB gzipped) `sdcard.img` which includes a 136MB `rootf
 **TODO:**
 - Patch kernel to include dtb so dtb file is nolonger needed. Described in K2 here: https://www.furkantokac.com/rpi3-fast-boot-less-than-2-seconds/
 - Store rootfs in kernel image using either initramfs or SquashFS
-- Make boot partition smaller: https://github.com/raspberrypi/firmware/issues/1486#issuecomment-745093948
 - Our next step is to minimize the kernel, rootfs, and drivers / modules.
 - Last step is to disable logging and kernel output messages, we haven't done this till now to make it easier to debug.

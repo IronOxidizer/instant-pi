@@ -9,7 +9,7 @@ if [ $# -eq 0 ] || [ $1 != "-N" ]; then
 fi
 
 yes | cp -f instantpi1b_defconfig buildroot*/configs && \
-make -C buildroot* instantpi1b_defconfig && \
-make -C buildroot* && \
+make -j $(nproc) -C buildroot* instantpi1b_defconfig && \
+make -j $(nproc) -C buildroot* && \
 yes | mv -f buildroot*/output/images/sdcard.img . && \
 echo "Image built at $(pwd)/sdcard.img"
