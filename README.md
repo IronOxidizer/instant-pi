@@ -133,11 +133,11 @@ First I made the created my own defconfig with the following changes:
 - Remove shared libraries, statically build everything
 - Enable LTO
 - Use F2FS for rootfs
-- Resize rootfs to 136MB to accommodate F2FS
+- Resize rootfs to 64M
 - Compress the kernel using LZ4
 - Remove default RPi firmware
 
-Then I created my own `genimage.cfg` to look for a F2FS `rootfs` instead of EXT4. I also shrunk the boot partition size to 7M (switch to FAT32 boot with 512 cluster size) as a result of the smaller cut down firmware.
+Then I created my own `genimage.cfg` to look for a F2FS `rootfs` instead of EXT4. I also shrunk the boot partition size to 7M (switch to FAT16 boot with 512 cluster size) as a result of the smaller cut down firmware.
 
 Finally, I removed unnecessary parameters in `cmdline.txt` and added `rootflags=fastboot` for F2FS. I created a blank `config.txt` and added the following lines to use the cut down firmware and specify our compressed kernel.
 
@@ -151,12 +151,13 @@ fixup_file=fixup_cd.dat
 kernel=zImage
 ```
 
-I used `make savedefconfig` to generate a defconfig which I saved to `buildroot/configs/instantpi1b_defconfig` to be built using `make instantpi1b_defconfig` and `make` (If you're having issues, wipe the buildroot dir and clean build).
+I used `make savedefconfig` to generate a defconfig which I saved to `buildroot/configs/br_instantpi1b_defconfig` to be built using `make br_instantpi1b_defconfig` and `make` (If you're having issues, wipe the buildroot dir and clean build).
 
-This generates a 145MB (25MB gzipped) `sdcard.img` which includes a 136MB `rootfs.f2fs` and 6MB `zImage`. Our optimizations result in boot times that are consistently ~29% faster at ~9.2s.
+To minimize the kernel and kernel modules, I first customized it using `make linux-menuconfig` removing all unnessary features, then I generated the defconfig using `make linux-savedefconfig` and copied it using `cp output/build/linux-custom/defconfig output/build/linux-custom/arch/arm/configs/linux_instantpi1b_defconfig`. By setting the kernel defconfig to `linux_isntantpib1` in the buildroot defconfig, we are able to easily use our custom defconfig.
+
+This generates a 68MB (2.4MB gzipped) `sdcard.img` which includes a 64MB `rootfs.f2fs` and 3MB `zImage`. Our optimizations result in boot times that are consistently ~29% faster at ~9.2s.
 
 **TODO:**
 - Patch kernel to include dtb so dtb file is nolonger needed. Described in K2 here: https://www.furkantokac.com/rpi3-fast-boot-less-than-2-seconds/
 - Store rootfs in kernel image using either initramfs or SquashFS
-- Our next step is to minimize the kernel, rootfs, and drivers / modules.
 - Last step is to disable logging and kernel output messages, we haven't done this till now to make it easier to debug.
