@@ -1,6 +1,6 @@
 #!/bin/sh
 
-if [ $# -eq 0 ] || [ $1 != "-N" ] && [ $1 != "-L" ] ; then
+if [ "$#" -eq 0 ] || [ "$1" != "-N" ] && [ "$1" != "-L" ]; then
     curl https://buildroot.org/downloads/buildroot-2020.08.1.tar.bz2 | tar xj
     mv buildroot* buildroot
     wget -N https://github.com/raspberrypi/firmware/raw/master/boot/bcm2708-rpi-b.dtb -P buildroot/output/images/
@@ -10,7 +10,7 @@ if [ $# -eq 0 ] || [ $1 != "-N" ] && [ $1 != "-L" ] ; then
 fi
 
 make -j $(nproc) -C buildroot defconfig BR2_DEFCONFIG=../br_instantpi1b_defconfig && \
-if [ $# -eq 0 ] || [ $1 != "-L" ] ; then
+if [ "$#" -eq 0 ] || [ "$1" != "-L" ]; then
     make -j $(nproc) -C buildroot linux-dirclean
 fi
 make -j $(nproc) -C buildroot && \

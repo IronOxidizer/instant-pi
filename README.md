@@ -1,7 +1,7 @@
 # instant-pi
 Achieving the fastest possible boot times with various Raspberry Pi devices
 
-When describing boot speed, we typically mean the time it takes for a device to go from un-powered to userspace. For this project, boot time will be measured from the moment the device receives power, to interactive shell with HDMI+USB+keyboard enabled. In your project this could instead be something like taking a picture, playing a video, or sending a message via WiFi or SMS.
+When describing boot speed, we typically mean the time it takes for a device to go from un-powered to userspace. For this project, boot time will be measured from the moment the device receives power, to interactive shell with HDMI+USB+keyboard enabled. In your project this could instead be something like taking a picture, starting a video/app/game, or sending a message via WiFi or SMS.
 
 Based on the following projects:
 - [Buildroot](https://buildroot.org/)
@@ -153,7 +153,7 @@ kernel=zImage
 
 I used `make savedefconfig` to generate a defconfig which I saved to `buildroot/configs/br_instantpi1b_defconfig` to be built using `make br_instantpi1b_defconfig` and `make` (If you're having issues, wipe the buildroot dir and clean build).
 
-To minimize the kernel and kernel modules, I first customized it using `make linux-menuconfig` removing all unnessary features, then I generated the defconfig using `make linux-savedefconfig` and copied it using `cp output/build/linux-custom/defconfig output/build/linux-custom/arch/arm/configs/linux_instantpi1b_defconfig`. By setting the kernel defconfig to `linux_isntantpib1` in the buildroot defconfig, we are able to easily use our custom defconfig.
+To minimize the kernel and kernel modules, I first customized it using `make linux-menuconfig` removing all unnessary features, then I generated the defconfig using `make linux-savedefconfig` and copied it from `cp output/build/linux-custom/defconfig`.
 
 This generates a 68MB (3.7MB gzipped) `sdcard.img` which includes a 2MB rootfs (64MB is the minimum size for f2fs) and 3MB kernel. Our optimizations result in boot times that are consistently ~47% faster at ~6.9s.
 
