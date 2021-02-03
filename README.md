@@ -90,7 +90,7 @@ To boot, we'll need the following files in the root of our [V]FAT formatted boot
 There are also optional files that contribute to the boot processes:
 
 - `cmdline.txt`
-    - Passes parameters / options to the kernel when it starts
+    - Passes parameters / options to the kernel when it starts. This can potentially be removed if the kernel is compiled with the proper default boot `cmdline`.
 
 - `config.txt`
     - Read by `start.elf` to configure the hardware before the kernel is loaded
