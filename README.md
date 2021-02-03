@@ -153,7 +153,7 @@ kernel=zImage
 
 I used `make savedefconfig` to generate a defconfig which I saved to `buildroot/configs/br_instantpi1b_defconfig` to be built using `make br_instantpi1b_defconfig` and `make` (If you're having issues, wipe the buildroot dir and clean build).
 
-To minimize the kernel and kernel modules, I first customized it using `make linux-menuconfig` removing all unnessary features, then I generated the defconfig using `make linux-savedefconfig` and copied it from `cp output/build/linux-custom/defconfig`.
+To minimize the kernel and kernel modules, I first customized it using `make linux-menuconfig` removing all unnessary features, then I generated the defconfig using `make linux-savedefconfig` and copied it from `buildroot/output/build/linux-custom/defconfig`.
 
 This generates a 68MB (3.7MB gzipped) `sdcard.img` which includes a 2MB rootfs (64MB is the minimum size for f2fs) and 3MB kernel. Our optimizations result in boot times that are consistently ~47% faster at ~6.9s.
 
