@@ -1,5 +1,6 @@
 #!/bin/sh
 
+# Use -N to skip downloads, use -L to skip downloads and clean recompile kernel
 if [ "$#" -eq 0 ] || [ "$1" != "-N" ] && [ "$1" != "-L" ]; then
     curl https://buildroot.org/downloads/buildroot-2020.08.1.tar.bz2 | tar xj
     mv buildroot* buildroot
