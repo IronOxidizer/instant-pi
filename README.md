@@ -108,7 +108,10 @@ We'll be using the Busybox `init` for system initialization (PID1). No services 
 If you would like to launch a specific application, an init system isn't even required, all that's needed is a method for mounting the filesystem then symlink the application to `/sbin/init`:
 - https://www.furkantokac.com/rpi3-fast-boot-less-than-2-seconds/
 
-If you would like to launch a GUI on boot, QT linuxfb is the best option:
+If you would like to launch a embdded GUI on boot, QT is the best option:
+- https://doc-snapshots.qt.io/qt6-dev/embedded-linux.html
+
+If hardware accelerated rendering is not applicable, see the following:
 - https://doc.qt.io/qt-5/embedded-linux.html#linuxfb
 - https://doc-snapshots.qt.io/qt6-dev/embedded-linux.html#linuxfb
 - GTK [no longer supports](https://www.phoronix.com/scan.php?page=news_item&px=ODU4OQ) DirectFB as of GTK+ 2.90
