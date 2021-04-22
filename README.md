@@ -111,6 +111,7 @@ If you would like to launch a specific application, an init system isn't even re
 If you would like to launch a embdded GUI on boot, QT is the best option:
 - https://doc.qt.io/qt-5/embedded-linux.html#eglfs
 - https://doc-snapshots.qt.io/qt6-dev/embedded-linux.html#embedded-eglfs
+- https://youtu.be/U-Qu6r6uwqE
 
 If hardware accelerated rendering is not applicable, see the following:
 - https://qtlite.com/v6.0.2/
