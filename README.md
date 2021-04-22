@@ -109,6 +109,7 @@ If you would like to launch a specific application, an init system isn't even re
 - https://www.furkantokac.com/rpi3-fast-boot-less-than-2-seconds/
 
 If you would like to launch a embdded GUI on boot, QT is the best option:
+- https://doc-snapshots.qt.io/qt6-dev/qpa.html
 - https://doc-snapshots.qt.io/qt6-dev/embedded-linux.html
 
 If hardware accelerated rendering is not applicable, see the following:
