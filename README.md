@@ -43,6 +43,7 @@ CD Bootloader Overhead is the theoretical fastest boot time with the closed sour
 - https://www.nxp.com/files-static/training_pdf/VFTF09_MONTAVISTA_LINUXBOOT.pdf
 - https://source.android.com/devices/tech/perf/boot-times
 - https://github.com/jonasblixt/punchboot
+- https://www.qt.io/blog/2016/05/25/fast-booting-qt-devices-part-3-optimizing-system-image
 
 ## How to go fast
 
