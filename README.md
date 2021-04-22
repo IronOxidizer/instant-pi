@@ -113,6 +113,7 @@ If you would like to launch a embdded GUI on boot, QT is the best option:
 - https://doc-snapshots.qt.io/qt6-dev/embedded-linux.html
 
 If hardware accelerated rendering is not applicable, see the following:
+- https://qtlite.com/v6.0.2/
 - https://doc.qt.io/qt-5/embedded-linux.html#linuxfb
 - https://doc-snapshots.qt.io/qt6-dev/embedded-linux.html#linuxfb
 - GTK [no longer supports](https://www.phoronix.com/scan.php?page=news_item&px=ODU4OQ) DirectFB as of GTK+ 2.90
