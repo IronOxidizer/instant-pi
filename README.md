@@ -13,6 +13,7 @@ Based on the following projects:
 - [F2FS](https://en.wikipedia.org/wiki/F2FS)
     - Unlike EXT4, F2FS was designed from the ground up for flash. It provides a [performance](https://www.phoronix.com/scan.php?page=article&item=linux-58-filesystems&num=4) and simplicity advantage compared to popular alternatives. This gives it the opportunity to boot faster and gives flash storage better endurance for long-term use.
 
+For tighter integration with Qt, consider [Boot to Qt](https://doc.qt.io/archives/qt-5.8-devicecreation/qtee-about-b2qt.html)
 
 ### Results
 
