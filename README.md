@@ -167,5 +167,5 @@ This generates a 68MB (3.7MB gzipped) `sdcard.img` which includes a 2MB rootfs (
 
 **TODO:**
 - Patch kernel to include dtb so dtb file is nolonger needed. Described in K2 here: https://www.furkantokac.com/rpi3-fast-boot-less-than-2-seconds/
-- Consider compiling rootfs into kernel using initramfs (cpio file system in buildroot)
+- Consider compiling rootfs into kernel using initramfs (cpio and initramfs in buildroot filesystem)
 - Last step is to disable logging and kernel output messages, we haven't done this till now to make it easier to debug.
