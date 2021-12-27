@@ -13,7 +13,7 @@ Based on the following projects:
 - [F2FS](https://en.wikipedia.org/wiki/F2FS)
     - Unlike EXT4, F2FS was designed from the ground up for flash. It provides a [performance](https://www.phoronix.com/scan.php?page=article&item=linux-58-filesystems&num=4) and simplicity advantage compared to popular alternatives. This gives it the opportunity to boot faster and gives flash storage better endurance for long-term use.
 
-For tighter integration with Qt, consider [Boot to Qt](https://doc.qt.io/archives/qt-5.8-devicecreation/qtee-about-b2qt.html)
+For tighter integration with Qt, consider [Boot to Qt](https://doc.qt.io/archives/qt-6.0-devicecreation/b2qt-index.html)
 
 ### Results
 
@@ -111,8 +111,7 @@ If you would like to launch a specific application, an init system isn't even re
 - https://www.furkantokac.com/rpi3-fast-boot-less-than-2-seconds/
 
 If you would like to launch a embdded GUI on boot, QT is the best option:
-- https://doc.qt.io/qt-5/embedded-linux.html#eglfs
-- https://doc-snapshots.qt.io/qt6-dev/embedded-linux.html#embedded-eglfs
+- https://doc.qt.io/qt-6/embedded-linux.html#eglfs
 - https://youtu.be/U-Qu6r6uwqE
 
 If hardware accelerated rendering is not applicable, see the following:
