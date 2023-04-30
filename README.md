@@ -21,7 +21,7 @@ Values represent time from unpowered to userland in seconds (+/-0.3s)
 
 |  | RPi OS Full | Buildroot | Buildroot Instant Pi | CD Bootloader Overhead |
 |-|-:|-:|-:|-:|
-| [0w](instant-pi-0w) | 70 | 10.5 | 6.6 | 4.1 |
+| [0w](instant-pi-0w) | 70 | 10.5 | 4.7 | 4.1 |
 | [1B](instant-pi-1b) | 77 | 13.0 | 6.9 | 4.3 |
 | 4B |  |  |  |  |
 
